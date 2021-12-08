@@ -2,7 +2,7 @@ def printError(err):
     print("\033[91m[!]: "+err+"\033[00m")
 
 def printWarning(warn):
-    print("\033[93m:/!\\"+warn+"\033[00m")
+    print("\033[93m/!\\: "+warn+"\033[00m")
 
 def printInfo(info):
     print("\033[34m[i]: "+info+"\033[00m")
