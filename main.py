@@ -5,7 +5,7 @@ import logs
 
 bot = discord.Client()
 bot.prefix = "!"
-print("Bot Rem 1.0:")
+print("Bot Rem 1.0:\n\n")
 @bot.event
 async def on_message(msg):
     # Get command
@@ -15,6 +15,7 @@ async def on_message(msg):
         logs.printInfo("Command "+command+" requested.")
         commands = {
             "hello": [cmds.hello, (msg,)],
+            "ping": [cmds.ping, (msg, bot)]
         }
         # Launch command
         func = commands.get(command)
@@ -28,6 +29,5 @@ async def on_ready():
     logs.printValid("Bot ready !")
     logs.printValid("Default prefix: " + bot.prefix)
     logs.printValid("Mention: "+bot.user.mention+"\n")
-    logs.printError("Test")
 
 bot.run(os.environ["TOKEN"])
