@@ -6,6 +6,8 @@ def valid_currency(msg):
     cursor.execute("SELECT currency FROM Servers WHERE server_id=?", (msg.guild.id,))
     valid = cursor.fetchone()
     db.close()
+    if valid is None:
+        return False
     return valid[0]
 
 async def balance(msg):

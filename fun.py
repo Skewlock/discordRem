@@ -6,6 +6,8 @@ def valid_fun(msg):
     cursor.execute("SELECT fun FROM Servers WHERE server_id=?", (msg.guild.id,))
     valid = cursor.fetchone()
     db.close()
+    if valid is None:
+        return False
     return valid[0]
 
 async def fact(msg):

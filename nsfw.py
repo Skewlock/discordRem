@@ -6,6 +6,8 @@ def valid_nsfw(msg):
     cursor.execute("SELECT nsfw FROM Servers WHERE server_id=?", (msg.guild.id,))
     valid = cursor.fetchone()
     db.close()
+    if valid is None:
+        return False
     return valid[0]
 
 async def rule34(msg):
