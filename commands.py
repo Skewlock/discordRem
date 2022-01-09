@@ -67,6 +67,7 @@ async def module(msg):
         embed.add_field(name=":tada: Fun", value=str(bool(values[2])))
         embed.add_field(name=":underage: NSFW", value=str(bool(values[1])))
         embed.add_field(name=":coin: Currency", value=str(bool(values[0])))
+        embed.set_image(url="https://3.bp.blogspot.com/-F5AU_w3sHpg/XJaN2ZFFtcI/AAAAAAAAbWo/056qtGlkeLgYlXIX2SJ5pdRl55y0E3YVQCLcBGAs/w800/05t-hXufSqtfydMWx6tKfx00Z_ZfzxstV3Qm30gZjRS0AUS-x-lkFiNYiFoKgOtc0edzIfBm76_y9uu7ozoQOtT6G6Ock2y4GN4OUNaUqFxXZg9jPrccqhII1ETEdHNhmaDeFQ2N2Ehikcm7tT7Ufg.png")
         return await msg.channel.send(embed=embed)
     try:
         if args[1] == "enable":
