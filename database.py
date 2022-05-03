@@ -9,6 +9,7 @@ async def init():
         admin BOOL,
         money INTEGER NOT NULL,
         bank_money INTEGER NOT NULL,
+        cooldown INTEGER,
         PRIMARY KEY (user_id)
     );
     ''')

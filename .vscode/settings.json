@@ -1,0 +1,12 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "discordRem",
+            "group": "botsDiscord",
+            "database": "${workspaceFolder:discordRem}/discordRem.db"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}

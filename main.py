@@ -9,6 +9,7 @@ bot = discord.Client()
 bot.prefix = "!"
 
 print("Bot Rem 1.0:\n\n")
+
 @bot.event
 async def on_message(msg):
     # Get command
@@ -24,18 +25,19 @@ async def on_message(msg):
                 "help": [cmds.help, (msg,)],
                 "sinit": [db.init_server, (msg,)],
                 "module": [cmds.module, (msg,)],
+                "profile": [cmds.profile, (msg,)],
 
                 #Fun commands
                 "fact": [fun.fact, (msg,)],
 
                 #Currency commands
                 "init": [db.init_user, (msg,)],
-                "profile": [cmds.profile, (msg,)],
                 "balance": [curr.balance, (msg,)],
+                "daily": [curr.daily, (msg,)],
 
                 #NSFW commands
                 "rule34": [nsfw.rule34, (msg,)],
-                #"porn": [cmds.porn, (msg,)]
+                #"porn": [nsfw.porn, (msg,)]
             }
             # Launch command
             func = commands.get(command)
@@ -43,6 +45,7 @@ async def on_message(msg):
                 return logs.printWarning("Command "+command+" doesn't exists.\n")
             await func[0](*func[1])
             logs.printInfo("Command "+command+" successfully done.\n")
+
 
 @bot.event
 async def on_ready():
